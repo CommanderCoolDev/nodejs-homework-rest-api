@@ -1,6 +1,6 @@
-const { NotFound } = require("http-errors");
+const { NotFound } = require('http-errors');
 
-const { Contact } = require("../../models");
+const { Contact } = require('../../models');
 
 const removeById = async (req, res) => {
   const { contactId } = req.params;
@@ -12,9 +12,9 @@ const removeById = async (req, res) => {
   }
 
   res.json({
-    status: "success",
+    status: 'success',
     code: 200,
-    message: "contact deleted ",
+    message: 'contact deleted ',
     data: {
       result,
     },
