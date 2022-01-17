@@ -1,7 +1,7 @@
-const { Conflict } = require('http-errors');
-const bcrypt = require('bcrypt');
+const { Conflict } = require("http-errors");
+const bcrypt = require("bcrypt");
 
-const { User } = require('../../models');
+const { User } = require("../../models");
 
 const signup = async (req, res) => {
   const { password, email, subscription } = req.body;
@@ -20,7 +20,7 @@ const signup = async (req, res) => {
   });
 
   res.status(201).json({
-    status: 'success',
+    status: "success",
     code: 201,
     data: {
       user: {

@@ -1,6 +1,6 @@
-const { NotFound } = require('http-errors');
+const { NotFound } = require("http-errors");
 
-const { Contact } = require('../../models');
+const { Contact } = require("../../models");
 
 const getById = async (req, res) => {
   const { contactId } = req.params;
@@ -11,7 +11,7 @@ const getById = async (req, res) => {
   }
 
   res.json({
-    status: 'success',
+    status: "success",
     code: 200,
     data: {
       result,
