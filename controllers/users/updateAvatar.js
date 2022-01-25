@@ -10,7 +10,7 @@ const updateAvatar = async (req, res) => {
   const imageName = `${id}_${originalname}`;
 
   const image = await Jimp.read(tmpUpload);
-  await image.resize(250, 250);
+  await image.resize(250, Jimp.AUTO);
   await image.writeAsync(tmpUpload);
 
   try {
