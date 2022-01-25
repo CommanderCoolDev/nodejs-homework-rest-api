@@ -1,10 +1,10 @@
-const { Conflict } = require("http-errors");
-const bcrypt = require("bcrypt");
-const gravatar = require("gravatar");
-const { v4 } = require("uuid");
+const { Conflict } = require('http-errors');
+const bcrypt = require('bcrypt');
+const gravatar = require('gravatar');
+const { v4 } = require('uuid');
 
-const { User } = require("../../models");
-const { sendEmail } = require("../../helpers");
+const { User } = require('../../models');
+const { sendEmail } = require('../../helpers');
 
 const signup = async (req, res) => {
   const { password, email, subscription } = req.body;
@@ -30,14 +30,14 @@ const signup = async (req, res) => {
 
   const mail = {
     to: email,
-    subject: "Подтверждение email",
+    subject: 'Подтверждение email',
     html: `<a targe="_blank" href="http://localhost:8787/api/users/verify/${verificationToken}">Подтвердите email</a>`,
   };
 
   await sendEmail(mail);
 
   res.status(201).json({
-    status: "success",
+    status: 'success',
     code: 201,
     data: {
       user: {

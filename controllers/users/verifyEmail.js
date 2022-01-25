@@ -1,6 +1,6 @@
-const { NotFound } = require("http-errors");
+const { NotFound } = require('http-errors');
 
-const { User } = require("../../models");
+const { User } = require('../../models');
 
 const verifyEmail = async (req, res) => {
   const { verificationToken } = req.params;
@@ -16,7 +16,7 @@ const verifyEmail = async (req, res) => {
   });
 
   res.json({
-    message: "Verify success",
+    message: 'Verify success',
   });
 };
 
